@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Table(name="Person")
 public class Person {
     @Id
-    @Column(name="Id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty(notes = "The database generated person ID")
     private int id;

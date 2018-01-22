@@ -8,7 +8,7 @@ import org.springframework.data.convert.Jsr310Converters;
 
 
 @SpringBootApplication
-@EntityScan(basePackageClasses = Jsr310Converters.class)
+@EntityScan(basePackages = {"com.abhinendra.domain"})
 @ComponentScan(basePackages = "com.abhinendra")
 public class ServerApplication {
 
