@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/person")
-@Api(value = "person", description = "Operations pertaining to person")
+@Api(tags = "/person", description = "Operations pertaining to person")
 public class PersonController {
     @Autowired
     private PersonService personService;
