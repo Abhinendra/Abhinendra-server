@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 @Service("personService")
 public class PersonServiceImpl implements PersonService {
     Predicate predicate;
-    @Autowired
-    PersonRepository personRepository;
+//    @Autowired
+//    PersonRepository personRepository;
     
 //    public PersonServiceImpl(PersonRepository personRepository){
 //              this.personRepository =personRepository;
@@ -25,7 +25,8 @@ public class PersonServiceImpl implements PersonService {
             throw new Exception(" Only positive real numbers are allowed for id") ;
         }
         predicate= QPerson.person.id.eq(id);
-        return personRepository.findOne(predicate);
+        return new Person("Abhi");
+//        return personRepository.findOne(predicate);
     }
 
     @Override
@@ -34,7 +35,8 @@ public class PersonServiceImpl implements PersonService {
             throw new Exception("Name can't be null");
         }
         predicate=QPerson.person.name.equalsIgnoreCase(name);
-        return personRepository.findOne(predicate);
+        return new Person("abhi");
+//        return personRepository.findOne(predicate);
     }
 
     @Override
@@ -43,7 +45,8 @@ public class PersonServiceImpl implements PersonService {
            throw new Exception("Name can't be blank");
        }
        Person person=new Person(name);
-       return personRepository.save(person);
+       return person;
+//       return personRepository.save(person);
     }
 
     @Override
