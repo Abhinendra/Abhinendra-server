@@ -13,22 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/person")
 @Api(value = "person", description = "Operations pertaining to person")
 public class PersonController {
-    private PersonService personService;
-
     @Autowired
-    public void setApplicant(PersonService personService){
-        this.personService = personService;
-    }
-
-
-    public PersonController(PersonService personService){
-        this.personService=personService;
-    }
+    private PersonService personService;
 
     @GetMapping(value = "/", produces = "application/json")
     public Person getPersonById(@Param("id") int id) throws Exception {
-            System.out.println("Could hit this controller");
-           return   personService.findPersonById(id) ;
+        System.out.println("Could hit this controller");
+        return personService.findPersonById(id);
     }
 
 }
